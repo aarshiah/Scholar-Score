@@ -1,0 +1,158 @@
+[
+  {
+    "name": "Hofstra University",
+    "acceptance_rate": 69,
+    "avg_gpa": 3.7,
+    "avg_test_score": 1250,
+    "benchmark_score": 72,
+    "major_strengths": [
+      "Business",
+      "Communications",
+      "Computer Science",
+      "Health Sciences"
+    ]
+  },
+  {
+    "name": "Stony Brook University",
+    "acceptance_rate": 49,
+    "avg_gpa": 3.8,
+    "avg_test_score": 1390,
+    "benchmark_score": 80,
+    "major_strengths": [
+      "Computer Science",
+      "Engineering",
+      "Biology",
+      "Health Sciences"
+    ]
+  },
+  {
+    "name": "New York University",
+    "acceptance_rate": 12,
+    "avg_gpa": 3.8,
+    "avg_test_score": 1490,
+    "benchmark_score": 91,
+    "major_strengths": [
+      "Business",
+      "Film",
+      "Computer Science",
+      "Arts"
+    ]
+  },
+  {
+    "name": "Columbia University",
+    "acceptance_rate": 4,
+    "avg_gpa": 3.9,
+    "avg_test_score": 1530,
+    "benchmark_score": 96,
+    "major_strengths": [
+      "Engineering",
+      "Computer Science",
+      "Political Science",
+      "Economics"
+    ]
+  },
+  {
+    "name": "Boston University",
+    "acceptance_rate": 11,
+    "avg_gpa": 3.9,
+    "avg_test_score": 1480,
+    "benchmark_score": 90,
+    "major_strengths": [
+      "Communications",
+      "Business",
+      "Biology",
+      "Engineering"
+    ]
+  },
+  {
+    "name": "Northeastern University",
+    "acceptance_rate": 6,
+    "avg_gpa": 3.9,
+    "avg_test_score": 1500,
+    "benchmark_score": 93,
+    "major_strengths": [
+      "Computer Science",
+      "Engineering",
+      "Business",
+      "Data Science"
+    ]
+  },
+  {
+    "name": "University of Michigan",
+    "acceptance_rate": 18,
+    "avg_gpa": 3.9,
+    "avg_test_score": 1470,
+    "benchmark_score": 89,
+    "major_strengths": [
+      "Engineering",
+      "Business",
+      "Computer Science",
+      "Psychology"
+    ]
+  },
+  {
+    "name": "Penn State University",
+    "acceptance_rate": 55,
+    "avg_gpa": 3.7,
+    "avg_test_score": 1300,
+    "benchmark_score": 75,
+    "major_strengths": [
+      "Engineering",
+      "Business",
+      "Communications",
+      "Data Science"
+    ]
+  },
+  {
+    "name": "University at Buffalo",
+    "acceptance_rate": 68,
+    "avg_gpa": 3.7,
+    "avg_test_score": 1260,
+    "benchmark_score": 71,
+    "major_strengths": [
+      "Engineering",
+      "Computer Science",
+      "Pharmacy",
+      "Business"
+    ]
+  },
+  {
+    "name": "Fordham University",
+    "acceptance_rate": 54,
+    "avg_gpa": 3.7,
+    "avg_test_score": 1370,
+    "benchmark_score": 79,
+    "major_strengths": [
+      "Business",
+      "Communications",
+      "Political Science",
+      "Psychology"
+    ]
+  },
+  {
+    "name": "Cornell University",
+    "acceptance_rate": 7,
+    "avg_gpa": 3.9,
+    "avg_test_score": 1510,
+    "benchmark_score": 94,
+    "major_strengths": [
+      "Engineering",
+      "Computer Science",
+      "Business",
+      "Biology"
+    ]
+  },
+  {
+    "name": "Rutgers University",
+    "acceptance_rate": 66,
+    "avg_gpa": 3.7,
+    "avg_test_score": 1350,
+    "benchmark_score": 77,
+    "major_strengths": [
+      "Business",
+      "Computer Science",
+      "Biology",
+      "Engineering"
+    ]
+  }
+]

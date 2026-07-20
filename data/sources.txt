@@ -1,0 +1,28 @@
+SCHOLARSCORE DATA SOURCE NOTES
+
+The current colleges.json file contains SAMPLE DEMONSTRATION VALUES.
+
+Before a public release or final competition submission, verify every college
+statistic and record:
+
+- The official source
+- The data year
+- The date accessed
+- The meaning of the statistic
+- Whether test scores are required, optional, or not considered
+
+Recommended sources:
+
+1. Official college Common Data Set files
+2. U.S. Department of Education College Scorecard API
+3. Official college admissions pages
+4. Data.gov datasets
+5. Official academic program catalogs
+
+Do not:
+
+- Copy paywalled proprietary admissions data
+- Scrape websites that prohibit automated access
+- Expose private API keys in JavaScript
+- Claim that ScholarScore guarantees admission
+- Present sample values as official current statistics

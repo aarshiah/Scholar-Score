@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Tell the browser to use standard UTF-8 characters. -->
+    <meta charset="UTF-8">
+
+    <!-- Make the layout resize correctly on phones and tablets. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Set the text shown in the browser tab. -->
+    <title>ScholarScore</title>
+
+    <!-- Load the blue-and-white stylesheet from the static folder. -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Create the sticky navigation bar. -->
+    <header class="topbar">
+        <!-- Create the ScholarScore logo. -->
+        <a class="logo" href="/">
+            <!-- Display the letter logo mark. -->
+            <span class="logo-mark">S</span>
+
+            <!-- Display the product name. -->
+            <span>ScholarScore</span>
+        </a>
+
+        <!-- Create navigation links to page sections. -->
+        <nav>
+            <a href="#profile">Profile</a>
+            <a href="#activities">Activities</a>
+            <a href="#interests">Majors</a>
+            <a href="#colleges">Colleges</a>
+            <a href="#results">Results</a>
+        </nav>
+    </header>
+
+    <!-- Hold the main page content. -->
+    <main>
+        <!-- Create the landing-page hero section. -->
+        <section class="hero">
+            <!-- Hold the hero text. -->
+            <div class="hero-copy">
+                <span class="eyebrow">College planning made clearer</span>
+
+                <h1>Turn your experiences into a clearer college profile.</h1>
+
+                <p>
+                    Add your academics, activities, awards, intended majors,
+                    possible minors, and college list. ScholarScore turns those
+                    details into an explainable student profile and comparison.
+                </p>
+
+                <a class="primary-button" href="#profile">
+                    Build My Profile
+                </a>
+            </div>
+
+            <!-- Show a sample dashboard preview. -->
+            <div class="hero-card">
+                <div class="mini-score">
+                    <span>Sample ScholarScore</span>
+                    <strong>86</strong>
+                    <small>Strong and focused profile</small>
+                </div>
+
+                <div class="mini-bars">
+                    <div>
+                        <span>Academics</span>
+                        <i style="width: 89%"></i>
+                    </div>
+
+                    <div>
+                        <span>Activities</span>
+                        <i style="width: 84%"></i>
+                    </div>
+
+                    <div>
+                        <span>Major Focus</span>
+                        <i style="width: 78%"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Create the basic academic-profile section. -->
+        <section class="card section-card" id="profile">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">Step 1</span>
+                    <h2>Academic profile</h2>
+                </div>
+
+                <p>
+                    Enter the student's current academic information.
+                </p>
+            </div>
+
+            <!-- Start the main student form. -->
+            <form id="score-form">
+                <div class="form-grid">
+                    <label>
+                        Student name
+                        <input
+                            id="student_name"
+                            type="text"
+                            placeholder="Aarna Shah"
+                        >
+                    </label>
+
+                    <label>
+                        Current grade
+                        <select id="grade_level">
+                            <option value="9">9th grade</option>
+                            <option value="10">10th grade</option>
+                            <option value="11">11th grade</option>
+                            <option value="12">12th grade</option>
+                            <option value="college">College student</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        GPA on a 4.0 scale
+                        <input
+                            id="gpa"
+                            type="number"
+                            min="0"
+                            max="4"
+                            step="0.01"
+                            placeholder="3.75"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        SAT score
+                        <input
+                            id="test_score"
+                            type="number"
+                            min="0"
+                            max="1600"
+                            step="10"
+                            placeholder="1320"
+                        >
+                    </label>
+
+                    <label>
+                        Course rigor
+                        <select id="course_rigor">
+                            <option value="1">Mostly standard courses</option>
+                            <option value="2">Some honors courses</option>
+                            <option value="3">Several honors or AP courses</option>
+                            <option value="4">Strong AP or IB schedule</option>
+                            <option value="5">Most rigorous courses available</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Graduation year
+                        <input
+                            id="graduation_year"
+                            type="number"
+                            min="2026"
+                            max="2040"
+                            placeholder="2029"
+                        >
+                    </label>
+                </div>
+            </form>
+        </section>
+
+        <!-- Create the dynamic extracurricular section. -->
+        <section class="card section-card" id="activities">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">Step 2</span>
+                    <h2>Extracurricular activities</h2>
+                </div>
+
+                <p>
+                    Add clubs, sports, jobs, volunteering, projects, research,
+                    family responsibilities, creative work, or community involvement.
+                </p>
+            </div>
+
+            <!-- JavaScript places activity cards inside this container. -->
+            <div id="activities-container" class="repeatable-container"></div>
+
+            <!-- Add another blank activity card. -->
+            <button
+                id="add-activity-button"
+                class="secondary-button"
+                type="button"
+            >
+                + Add another activity
+            </button>
+        </section>
+
+        <!-- Create the dynamic awards section. -->
+        <section class="card section-card" id="awards">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">Step 3</span>
+                    <h2>Awards and honors</h2>
+                </div>
+
+                <p>
+                    Add competitions, honor societies, certifications,
+                    scholarships, publications, recognitions, or other achievements.
+                </p>
+            </div>
+
+            <!-- JavaScript places award cards inside this container. -->
+            <div id="awards-container" class="repeatable-container"></div>
+
+            <!-- Add another blank award card. -->
+            <button
+                id="add-award-button"
+                class="secondary-button"
+                type="button"
+            >
+                + Add another award
+            </button>
+        </section>
+
+        <!-- Create the majors, minors, and career-interests section. -->
+        <section class="card section-card" id="interests">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">Step 4</span>
+                    <h2>Majors, minors, and interests</h2>
+                </div>
+
+                <p>
+                    Majors and minors should be included because they help
+                    explain the student's goals and improve college comparisons.
+                </p>
+            </div>
+
+            <div class="form-grid">
+                <label>
+                    Intended major
+                    <input
+                        id="intended_major"
+                        type="text"
+                        list="major-options"
+                        placeholder="Computer Science"
+                    >
+                </label>
+
+                <label>
+                    Possible second major
+                    <input
+                        id="second_major"
+                        type="text"
+                        list="major-options"
+                        placeholder="Data Science"
+                    >
+                </label>
+
+                <label>
+                    Possible minor
+                    <input
+                        id="intended_minor"
+                        type="text"
+                        list="major-options"
+                        placeholder="Business"
+                    >
+                </label>
+
+                <label>
+                    Career interests
+                    <input
+                        id="career_interests"
+                        type="text"
+                        placeholder="AI engineer, researcher, entrepreneur"
+                    >
+                </label>
+
+                <label class="full-width">
+                    Why are you interested in these fields?
+                    <textarea
+                        id="interest_statement"
+                        rows="6"
+                        placeholder="Explain which classes, projects, activities, problems, or experiences led to these interests."
+                    ></textarea>
+
+                    <small>
+                        Strong responses connect interests to specific experiences,
+                        accomplishments, skills, and future goals.
+                    </small>
+                </label>
+            </div>
+
+            <!-- Provide common suggestions while still allowing custom entries. -->
+            <datalist id="major-options">
+                <option value="Computer Science"></option>
+                <option value="Artificial Intelligence"></option>
+                <option value="Cybersecurity"></option>
+                <option value="Data Science"></option>
+                <option value="Biology"></option>
+                <option value="Chemistry"></option>
+                <option value="Engineering"></option>
+                <option value="Business"></option>
+                <option value="Finance"></option>
+                <option value="Psychology"></option>
+                <option value="Political Science"></option>
+                <option value="Pre-Med"></option>
+                <option value="Education"></option>
+                <option value="Communications"></option>
+                <option value="Art and Design"></option>
+            </datalist>
+        </section>
+
+        <!-- Create the personal statement section. -->
+        <section class="card section-card" id="story">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">Step 5</span>
+                    <h2>Student story</h2>
+                </div>
+
+                <p>
+                    This does not need to be a finished college essay.
+                    It helps the app understand the student's experiences and impact.
+                </p>
+            </div>
+
+            <label>
+                Profile statement
+                <textarea
+                    id="essay"
+                    rows="9"
+                    placeholder="Describe something you built, led, overcame, learned, improved, researched, or contributed to."
+                ></textarea>
+
+                <small>
+                    The prototype uses explainable NLP-style analysis based on
+                    length, action language, specificity, and measurable results.
+                </small>
+            </label>
+        </section>
+
+        <!-- Create the college-search section. -->
+        <section class="card section-card" id="colleges">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">Step 6</span>
+                    <h2>Add top colleges</h2>
+                </div>
+
+                <p>
+                    Search for colleges and add them to the student's comparison list.
+                </p>
+            </div>
+
+            <div class="college-search">
+                <input
+                    id="college-search-input"
+                    type="search"
+                    placeholder="Search colleges..."
+                >
+
+                <!-- JavaScript fills this box with matching colleges. -->
+                <div id="search-results" class="search-results"></div>
+            </div>
+
+            <!-- JavaScript displays selected college chips here. -->
+            <div id="selected-colleges" class="selected-colleges">
+                <p class="empty-state">No colleges selected yet.</p>
+            </div>
+
+            <!-- Send the entire profile to the Flask backend. -->
+            <button
+                id="calculate-button"
+                class="primary-button wide-button"
+                type="button"
+            >
+                Generate ScholarScore
+            </button>
+        </section>
+
+        <!-- Create the results area. -->
+        <section class="results-section" id="results">
+            <!-- Show this text while waiting for the backend. -->
+            <div id="loading" class="loading hidden">
+                Calculating your ScholarScore...
+            </div>
+
+            <!-- Hide result content until a score has been calculated. -->
+            <div id="results-content" class="hidden">
+                <div class="score-summary card">
+                    <div class="score-circle">
+                        <span>Your score</span>
+                        <strong id="student-score">0</strong>
+                        <small>out of 100</small>
+                    </div>
+
+                    <div>
+                        <span class="eyebrow">Your ScholarScore</span>
+                        <h2 id="score-message">Your profile summary</h2>
+                        <p id="model-note"></p>
+                    </div>
+                </div>
+
+                <!-- Show the five category scores. -->
+                <div class="breakdown-grid">
+                    <article class="metric-card card">
+                        <span>Academics</span>
+                        <strong id="academic-score">0</strong>
+                    </article>
+
+                    <article class="metric-card card">
+                        <span>Activities</span>
+                        <strong id="extracurricular-score">0</strong>
+                    </article>
+
+                    <article class="metric-card card">
+                        <span>Awards</span>
+                        <strong id="award-score">0</strong>
+                    </article>
+
+                    <article class="metric-card card">
+                        <span>Student Story</span>
+                        <strong id="essay-score">0</strong>
+                    </article>
+
+                    <article class="metric-card card">
+                        <span>Major Focus</span>
+                        <strong id="interest-score">0</strong>
+                    </article>
+                </div>
+
+                <!-- Show improvement suggestions. -->
+                <section class="results-block">
+                    <div class="section-heading results-heading">
+                        <div>
+                            <span class="eyebrow">Next steps</span>
+                            <h2>Ways to strengthen the profile</h2>
+                        </div>
+                    </div>
+
+                    <div
+                        id="recommendations"
+                        class="recommendation-grid"
+                    ></div>
+                </section>
+
+                <!-- Show college comparison cards. -->
+                <section class="results-block">
+                    <div class="section-heading results-heading">
+                        <div>
+                            <span class="eyebrow">College comparisons</span>
+                            <h2>Your current match list</h2>
+                        </div>
+                    </div>
+
+                    <div
+                        id="college-comparisons"
+                        class="comparison-grid"
+                    ></div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- Create the website footer. -->
+    <footer>
+        <strong>ScholarScore</strong>
+
+        <p>
+            Educational prototype. Admissions decisions depend on many factors
+            that cannot be fully predicted by a score.
+        </p>
+    </footer>
+
+    <!-- Load JavaScript after the HTML so every element already exists. -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
